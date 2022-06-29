@@ -31,13 +31,14 @@
               <a href="#" class="menu-link">تماس با ما</a>
               <a href="#" class="menu-link">شعب</a>
               <a href="#" class="menu-link">کاتالوگ</a>
+              <a href="login.html" class="menu-link">ورود</a>
             </ul>
           </nav>
         </header>
 
         <form action="#" method="post" class="login">
-          <input type="text" name="username" placeholder="نام کاربری" />
-          <input type="password" name="password" placeholder="رمز عبور" />
+          <input type="text" name="username" placeholder="نام کاربری" required/>
+          <input type="password" name="password" placeholder="رمز عبور" required/>
           <div class="radio-button">
             <input type="radio" name="level" id="manager" />
             <label for="manager">مدیر</label>
@@ -50,6 +51,7 @@
             <input type="radio" name="level" id="client" />
             <label for="client">خریدار</label>
           </div>
+          <p class="forgot-password">فراموشی رمز عبور</pد>
           <input type="submit" value="ورود">
         </form>
       </body>

@@ -271,6 +271,12 @@ footer {
   transform: scale(1.1);
 }
 
+.login .forgot-password {
+  color: white;
+  margin: 10% 20% 0;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
   .login {
     width: 60%;
