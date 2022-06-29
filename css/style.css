@@ -117,7 +117,7 @@ input[type="password"] {
 
 .main {
   padding: 5%;
-  width: 100%;
+  max-width: 100%;
   text-align: center;
 }
 
@@ -177,4 +177,55 @@ footer {
     color: white;
     text-align: center;
     padding: 30px 0;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  color: white;
+  display: none
+}
+
+@media screen and (max-width : 900px) {
+  .sidebar {
+    width: 70% !important;
+  }
+
+  .product {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width : 600px) {
+  header {
+    position: relative;
+  }
+
+  .products {
+    margin-top: 20%;
+  }
+
+  .sidebar {
+    position: absolute;
+    z-index: 998;
+    right: -70%;
+    height: 100%;
+    transition: .3s linear;
+  }
+
+  .sidebar.open {
+    right: 0;
+    background-color: white;
+  }
+
+  .menu-icon {
+    display: block;
+    z-index: 999;
+  }
+
+  .menu-icon.open {
+    color: black;
+  }
 }
