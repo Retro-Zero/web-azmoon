@@ -15,7 +15,7 @@
 }
 
 body {
-    position: relative;
+  position: relative;
 }
 
 header {
@@ -27,98 +27,154 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 60px 0;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 60px 0;
+  color: white;
 }
 
 .menu-link {
-    color: white;
-    margin-left: 20px;
+  color: white;
+  margin-left: 20px;
 }
 
 .body {
-    width: 100%;
-    display: flex;
-    height: 100vh;
+  width: 100%;
+  display: flex;
 }
 
 .body .sidebar {
-    width: 30%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border-left: 3px solid blueviolet;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-left: 3px solid blueviolet;
 }
 
 .sidebar .home-login {
-    width: 100%;
-    border-bottom: 3px solid blueviolet;
+  width: 100%;
+  border-bottom: 3px solid blueviolet;
 }
 
 .home-login h1 {
-    font-size: 20px;
-    text-align: center;
-    padding: 10px 0;
-    height: fit-content;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
+  height: fit-content;
 }
 
-.home-login input[type = text], input[type = password] {
-    width: 80%;
-    padding: 5px;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid blueviolet;
-    display: block;
-    margin: 5px auto;
+.home-login input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid blueviolet;
+  display: block;
+  margin: 5px auto;
 }
 
 .home-login .radio-button {
-    margin: 10px 10%;
+  margin: 10px 10%;
 }
 
-.home-login input[type = submit] {
-    display: block;
-    width: 40%;
-    margin: auto;
-    background: transparent;
-    outline: none;
-    border: 1px solid blueviolet;
-    padding: 5px 0;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: .2s;
+.home-login input[type="submit"] {
+  display: block;
+  width: 40%;
+  margin: auto;
+  background: transparent;
+  outline: none;
+  border: 1px solid blueviolet;
+  padding: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.home-login input[type = submit]:hover {
-    background-color: blueviolet;
-    color: white;
+.home-login input[type="submit"]:hover {
+  background-color: blueviolet;
+  color: white;
 }
 
 .coupon {
-    padding: 10px 10%;
+  padding: 10px 10%;
 }
 
 .coupon-code {
-    width: 100%;
-    padding: 30px 50px;
-    background-color: blueviolet;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
-    margin: 10px auto;
+  width: 100%;
+  padding: 30px 50px;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  margin: 10px auto;
 }
 
 .coupon-code p {
-    width: 100%;
-    text-align: justify;
+  width: 100%;
+  text-align: justify;
+}
+
+.main {
+  padding: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.product {
+  width: calc(100% / 3 - 10px);
+  margin: 30px 10px;
+  box-shadow: 4px 0px 20px grey;
+  padding: 10px 0;
+  border-radius: 12px;
+}
+
+.product .title {
+  width: 50%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.product .status {
+  margin: 10px 0;
+}
+
+span.available {
+    color: green;
+}
+
+span.unavailable {
+    color: red;
+}
+
+.product .price {
+    margin: 5px 0;
+}
+
+.product .add-to-cart {
+    margin: 5px 0 10px;
+    color: rgb(103, 219, 26);
+    cursor: pointer;
 }
 
 footer {
-    height: 20vh;
     width: 100%;
     background-color: blueviolet;
-    position: absolute;
-    bottom: 0;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
 }
