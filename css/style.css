@@ -64,7 +64,7 @@ nav {
 }
 
 .home-login input[type="text"],
-input[type="password"] {
+.home-login input[type="password"] {
   width: 80%;
   padding: 5px;
   border-radius: 5px;
@@ -154,29 +154,29 @@ input[type="password"] {
 }
 
 span.available {
-    color: green;
+  color: green;
 }
 
 span.unavailable {
-    color: red;
+  color: red;
 }
 
 .product .price {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 .product .add-to-cart {
-    margin: 5px 0 10px;
-    color: rgb(103, 219, 26);
-    cursor: pointer;
+  margin: 5px 0 10px;
+  color: rgb(103, 219, 26);
+  cursor: pointer;
 }
 
 footer {
-    width: 100%;
-    background-color: blueviolet;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
+  width: 100%;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
 }
 
 .menu-icon {
@@ -185,10 +185,10 @@ footer {
   right: 10px;
   font-size: 22px;
   color: white;
-  display: none
+  display: none;
 }
 
-@media screen and (max-width : 900px) {
+@media screen and (max-width: 900px) {
   .sidebar {
     width: 70% !important;
   }
@@ -198,7 +198,7 @@ footer {
   }
 }
 
-@media screen and (max-width : 600px) {
+@media screen and (max-width: 600px) {
   header {
     position: relative;
   }
@@ -212,7 +212,7 @@ footer {
     z-index: 998;
     right: -70%;
     height: 100%;
-    transition: .3s linear;
+    transition: 0.3s linear;
   }
 
   .sidebar.open {
@@ -227,5 +227,63 @@ footer {
 
   .menu-icon.open {
     color: black;
+  }
+}
+
+.login {
+  display: block;
+  width: 50%;
+  margin: 5% auto;
+  background-color: blueviolet;
+  padding: 30px 50px;
+  border-radius: 12px;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  display: block;
+  border: none;
+  outline: none;
+  width: 60%;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.login .radio-button {
+  margin: 10px 20% 0;
+  color: white;
+}
+
+.login input[type="submit"] {
+  padding: 5px 30px;
+  display: block;
+  margin: 20px auto 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: white;
+  transition: 0.2s;
+}
+
+.login input[type="submit"]:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 900px) {
+  .login {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    width: 80%;
+  }
+
+  .login input[type="text"],
+  .login input[type="password"] {
+    width: 80%;
   }
 }
