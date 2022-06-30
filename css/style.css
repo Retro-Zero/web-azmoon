@@ -293,3 +293,49 @@ footer {
     width: 80%;
   }
 }
+
+.dashboard-table {
+  width: 80%;
+  margin: 100px auto;
+  text-align: center;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dashboard-table th {
+  background-color: blueviolet;
+  color: white;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.dashboard-table td {
+  border-bottom: 1px solid blueviolet;
+  padding: 15px 0;
+}
+
+.edit, .delete {
+  color: black;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.edit {
+  background-color: rgb(255, 213, 0);
+}
+
+.delete {
+  background-color: red;
+}
+
+.new-row {
+  color: white;
+  font-weight: bold;
+  background-color: blueviolet;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  margin: 2% 10% 0;
+}
