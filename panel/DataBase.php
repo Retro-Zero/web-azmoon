@@ -44,7 +44,7 @@ class DataBase
     public function insert($tableName, $fields, $values)
     {
         try {
-            $statement = $this->connection->prepare("INSERT INTO " . $tableName . "(" . implode(', ', $fields) . " , created_at) VALUES ( :" . implode(', :', $fields) . " , now() );");
+            $statement = $this->connection->prepare("INSERT INTO " . $tableName . "(" . implode(', ', $fields) . ") VALUES(:" . implode(', :', $fields) . ")");
             $statement->execute(array_combine($fields, $values));
             return true;
         } catch (PDOException $error) {
@@ -64,11 +64,11 @@ class DataBase
             }
         }
 
-        $sql .= "`updated_at` = now()";
         $sql .= " WHERE `id` = ?";
 
         try {
             $statement = $this->connection->prepare($sql);
+            var_dump($id);
             $affectedRows = $statement->execute(array_merge(array_filter(array_values($values)), [$id]));
             return true;
         } catch (PDOException $error) {

@@ -15,18 +15,18 @@
     <h1>فروشگاه رنگ ساختمانی هفت‌رنگ</h1>
     <nav>
       <ul class="menu">
-        <a href="#" class="menu-link">خانه</a>
+        <a href="<?= url('web-azmoon') ?>" class="menu-link">خانه</a>
         <a href="#" class="menu-link">درباره ما</a>
         <a href="#" class="menu-link">تماس با ما</a>
         <a href="#" class="menu-link">شعب</a>
         <a href="#" class="menu-link">کاتالوگ</a>
-        <a href="../auth/login.html" class="menu-link">ورود</a>
+        <a href="<?= url('web-azmoon/logout') ?>" class="menu-link">خروج</a>
       </ul>
     </nav>
 
-    <p>کاربر گرامی آرین خوش آمدید</p>
+    <p>کاربر گرامی <?= $user['full_name'] ?> خوش آمدید</p>
   </header>
-  <a href="#" class="new-row">افزودن محصول جدید</a>
+  <a href="<?= url('web-azmoon/create-product') ?>" class="new-row">افزودن محصول جدید</a>
   <table class="dashboard-table">
     <tr>
       <th>#</th>
@@ -35,22 +35,17 @@
       <th>قیمت</th>
       <th>امکانات</th>
     </tr>
+      <?php
+      $counter = 1; foreach ($products as $product) {?>
     <tr>
-      <td>1</td>
-      <td>آبی</td>
-      <td>#e554552</td>
-      <td>245000</td>
-      <td><a href="#" class="edit"><i class="fa fa-pencil"></i></a><a href="#" class="delete"><i
+      <td><?= $counter ?></td>
+      <td><?= $product['title'] ?></td>
+      <td><?= $product['hex_code'] ?></td>
+      <td><?= $product['price'] ?></td>
+      <td><a href="<?= url('web-azmoon/product-delete/' . $product['id']) ?>" class="delete"><i
             class="fa fa-trash"></i></a></td>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>آبی</td>
-      <td>#e554552</td>
-      <td>245000</td>
-      <td><a href="#" class="edit"><i class="fa fa-pencil"></i></a><a href="#" class="delete"><i
-            class="fa fa-trash"></i></a></td>
-    </tr>
+      <?php $counter++;} ?>
   </table>
 
 </body>

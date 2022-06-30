@@ -383,3 +383,8 @@ footer {
   background-color: blueviolet;
   color: white;
 }
+
+.welcome {
+  text-align: center;
+  margin: 10px 0 100px;
+}

@@ -21,7 +21,12 @@
           <a href="#" class="menu-link">تماس با ما</a>
           <a href="#" class="menu-link">شعب</a>
           <a href="#" class="menu-link">کاتالوگ</a>
-          <a href="../auth/login.html" class="menu-link">ورود</a>
+            <?php if (isset($_SESSION['user'])) { ?>
+                <a href="<?= url('web-azmoon/admin-panel') ?>" class="menu-link">پروفایل</a>
+                <a href="<?= url('web-azmoon/logout') ?>" class="menu-link">خروج</a>
+            <?php } else { ?>
+          <a href="<?= url('web-azmoon/login') ?>" class="menu-link">ورود</a>
+            <?php } ?>
         </ul>
         <div class="cart">
           <span class="cart-number" id="cart-counter">0</span>
@@ -34,6 +39,7 @@
       <i class="fa fa-bars menu-icon" id="menu-icon" onclick="openNavbar()"></i>
       <div class="sidebar" id="sidebar">
         <form action="<?= url('web-azmoon/check-login') ?>" method="post" class="home-login">
+            <?php if(!isset($_SESSION['user'])) { ?>
           <h1>ورود به پنل شخصی</h1>
           <input type="text" placeholder="نام کاربری" required name="username"/>
           <input type="password" placeholder="رمز عبور" required name="password"/>
@@ -51,6 +57,9 @@
           </div>
           <input type="submit" value="ورود" />
         </form>
+          <?php } else { ?>
+              <p class="welcome">خوش آمدید <?= $user['full_name'] ?></p>
+          <?php } ?>
 
         <div class="coupon">
           <p>تخفیف امروز :</p>

@@ -10,24 +10,17 @@ class Auth
 {
     public function login()
     {
-        $db = new DataBase();
-        $settings = $db->select("SELECt * FROM `web_settings`")->fetch();
-        if (isset($_SESSION['user'])) {
-            $user = $db->select("SELECT * FROM `users` WHERE `id` = ?", [$_SESSION['user']])->fetch();
-        }
-        require_once(BASE_PATH . 'template/auth/index.php');
+        require_once(BASE_PATH . 'template/auth/login.php');
     }
 
     public function checkLogin($request)
     {
         $db = new DataBase();
-        var_dump($request);
-        die();
         $user = $db->select("SELECT * FROM `users` WHERE `username` = ?", [$request['username']])->fetch();
         if (!is_null($user)) {
-            if (password_verify($request['password'], $user['password'])) {
+            if ($request['password'] == $user['password']) {
                 $_SESSION['user'] = $user['id'];
-                $this->redirect('web-azmoon/dashboard');
+                $this->redirect('web-azmoon/admin-panel');
             } else {
                 $this->redirect('web-azmoon/login', 'failed');
             }
@@ -38,20 +31,8 @@ class Auth
 
     public function checkAdmin()
     {
-        if (isset($_SESSION['user'])) {
-            $db = new DataBase();
-            $user = $db->select("SELECT * FROM `users` WHERE `id` = ?", [$_SESSION['user']])->fetch();
-            if (!is_null($user)) {
-                if ($user['group_id'] == '3') {
-                    $this->redirect("Sh.motahari-school/teacher-panel/profile");
-                } elseif ($user['group_id'] == '4') {
-                    $this->redirect("Sh.motahari-school/student-panel/profile");
-                }
-            } else {
-                $this->redirectBack();
-            }
-        } else {
-            $this->redirectBack();
+        if (!isset($_SESSION['user'])) {
+            $this->redirect('web-azmoon');
         }
     }
 
@@ -60,7 +41,7 @@ class Auth
         if (isset($_SESSION['user'])) {
             unset($_SESSION['user']);
             session_destroy();
-            $this->redirect('Sh.motahari-school/login');
+            $this->redirect('web-azmoon');
         } else {
             $this->redirectBack();
         }

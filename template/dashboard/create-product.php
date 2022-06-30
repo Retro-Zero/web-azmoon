@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>هفت رنگ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="../../public/css/style.css" />
+    <link rel="stylesheet" href="<?= asset('web-azmoon/public/css/style.css') ?>" />
 </head>
 
 <body>
@@ -20,27 +20,22 @@
                 <a href="#" class="menu-link">تماس با ما</a>
                 <a href="#" class="menu-link">شعب</a>
                 <a href="#" class="menu-link">کاتالوگ</a>
-                <a href="../auth/login.html" class="menu-link">ورود</a>
+                <a href="../auth/login.php" class="menu-link">ورود</a>
             </ul>
         </nav>
 
         <p>کاربر گرامی آرین خوش آمدید</p>
     </header>
 
-    <form action="#" method="post" class="create">
-        <input type="text" placeholder="عنوان رنگ">
-        <input type="text" placeholder="کد محصول">
-        <input type="number" placeholder="قیمت">
-        <input type="number" placeholder="تعداد در انبار">
-        <input type="text" placeholder="کد HEX قابل نمایش">
-        <div class="checkbox">
-            <label>تخفیف روز</label>
-            <input type="checkbox">
-        </div>
-        <input type="number" placeholder="میزان تخفیف (درصد)">
-        <textarea placeholder="توضیحات"></textarea>
+    <form action="<?= url('web-azmoon/product-store') ?>" method="post" class="create">
+        <input type="text" placeholder="عنوان رنگ" name="title">
+        <input type="number" placeholder="کد محصول" name="code">
+        <input type="number" placeholder="قیمت" name="price">
+        <input type="number" placeholder="تعداد در انبار" name="stock">
+        <input type="text" placeholder="کد HEX قابل نمایش" name="hex_code">
         <input type="submit" value="ایجاد">
     </form>
 </body>
 
+<<?= asset('web-azmoon/public/js/script.js') ?>"></script>
 </html>
