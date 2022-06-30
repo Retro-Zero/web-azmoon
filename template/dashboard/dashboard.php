@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>هفت رنگ</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="<?= asset('web-azmoon/public/css/style.css') ?>" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <a href="#" class="menu-link">تماس با ما</a>
         <a href="#" class="menu-link">شعب</a>
         <a href="#" class="menu-link">کاتالوگ</a>
-        <a href="login.html" class="menu-link">ورود</a>
+        <a href="../auth/login.html" class="menu-link">ورود</a>
       </ul>
     </nav>
 
@@ -54,6 +54,6 @@
   </table>
 
 </body>
-<script src="./js/script.js"></script>
+<<?= asset('web-azmoon/public/js/script.js') ?>"></script>
 
 </html>
