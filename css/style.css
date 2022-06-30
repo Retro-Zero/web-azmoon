@@ -315,7 +315,8 @@ footer {
   padding: 15px 0;
 }
 
-.edit, .delete {
+.edit,
+.delete {
   color: black;
   padding: 3px 10px;
   border-radius: 4px;
@@ -338,4 +339,47 @@ footer {
   padding: 10px;
   position: absolute;
   margin: 2% 10% 0;
+}
+
+.create {
+  width: 50%;
+  margin: 100px auto;
+  border: 3px solid blueviolet;
+  border-radius: 8px;
+  padding: 30px 50px;
+}
+
+.create input[type=text],
+.create input[type=password],
+.create input[type=number],
+.create textarea {
+  display: block;
+  width: 70%;
+  margin: 0 auto 30px;
+  padding: 10px 20px;
+  border: 1px solid blueviolet;
+  border-radius: 4px;
+  outline: none;
+}
+
+.create .checkbox {
+  width: 70%;
+  margin: 0 auto 30px;
+}
+
+.create input[type = submit] {
+  width: 30%;
+  padding: 10px;
+  display: block;
+  background-color: white;
+  border: 1px solid blueviolet;
+  border-radius: 6px;
+  outline: none;
+  margin: auto;
+  transition: .2s;
+}
+
+.create input[type = submit]:hover {
+  background-color: blueviolet;
+  color: white;
 }
